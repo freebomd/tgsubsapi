@@ -15,13 +15,12 @@ def telegram(username):
         print(channel_name)
         description = soup.find("div",class_="tgme_page_description").text
         #print(description)
-        dp = soup.find("img",class_="tgme_page_photo_image")['src']
+        #dp = soup.find("img",class_="tgme_page_photo_image")['src']
         #print(dp['src'])
         
         data = {}
         data['name'] = channel_name #Can be used as public group also
         data['subs'] = members_count
-        data['description'] = description
         data['image'] = dp
         return data
     except Exception as e:
